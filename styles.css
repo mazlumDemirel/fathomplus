@@ -337,12 +337,12 @@ p.section-sub {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
   align-items: stretch;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 960px) {
   .pricing-grid {
     grid-template-columns: 1fr;
   }
