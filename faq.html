@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>FAQ - Fathom Pulse</title>
+<meta name="description" content="Answers to common questions about Fathom Pulse: how load testing works, what's free vs Pro, privacy, and subscription management." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 108 108%22><rect width=%22108%22 height=%22108%22 rx=%2222%22 fill=%22%231b4965%22/><path d=%22M20 54 L38 54 L46 30 L58 78 L66 54 L88 54%22 fill=%22none%22 stroke=%22%23cae9ff%22 stroke-width=%226%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="mark">
+        <svg viewBox="0 0 108 108" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 54 L38 54 L46 30 L58 78 L66 54 L88 54" stroke="#cae9ff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      Fathom Pulse
+    </a>
+    <nav class="primary">
+      <a href="how-to.html">How it works</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="faq.html" class="current">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
+    <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/details?id=com.fathom.pulse">Get it on Google Play</a>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom: 8px;">
+  <div class="wrap">
+    <span class="eyebrow">FAQ</span>
+    <h1>Frequently asked questions</h1>
+  </div>
+</section>
+
+<section style="padding-top: 8px;">
+  <div class="wrap" style="max-width: 780px;">
+
+    <div class="faq-group-title">General</div>
+
+    <details class="faq-item" open>
+      <summary>What exactly is Fathom Pulse?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>An Android app that turns a Postman collection into a real load test and a
+        glanceable health dashboard. Import a collection, run a test at whatever intensity
+        makes sense, and optionally pin it so you can check its status - or get a notification
+        the moment it starts failing - without opening the app again.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Do I need a Postman account, or Postman installed?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>No. Fathom reads the standard Postman v2.1 collection/environment JSON format -
+        the same file you'd get from Postman's own "Export" button - but it doesn't talk to
+        Postman's servers or require any Postman account.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does this replace Postman?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>No - Fathom isn't for building or editing requests in detail, and it doesn't try
+        to be. It's a focused tool for one job: pulse-checking APIs you already have a
+        collection for, especially in a load-testing/monitoring context, from a phone rather
+        than a laptop.</p>
+      </div>
+    </details>
+
+    <div class="faq-group-title">Load testing</div>
+
+    <details class="faq-item">
+      <summary>How does Fathom decide how much load my phone can generate?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>Before ramping up, it checks your device's CPU core count, available RAM, and
+        network type, and computes a concurrency ceiling from that. Light, Medium, and Heavy
+        are percentages of that ceiling (15%, 40%, 100%), so a preset never asks for more than
+        your specific phone can actually generate.</p>
+        <p>A short calibration burst also runs first - if the target is already failing or
+        very slow at low concurrency, Fathom stops before ramping up rather than pushing a
+        target that's clearly already in trouble.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What if I'm on cellular data, not Wi-Fi?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>The Heavy preset is automatically capped on cellular, to avoid carrier throttling
+        making a result look worse than the target actually performed.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Does it run my collection's pre-request and test scripts?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>Yes (Pro) - a real embedded JavaScript engine executes your collection's actual,
+        unmodified script source, including HMAC signing helpers and
+        <code>pm.environment.set(...)</code>/<code>pm.environment.get(...)</code>. A token a
+        "Login" request's test script captures is available to every later request in that
+        same run, in collection order. Assertion helpers (<code>pm.test</code>,
+        <code>pm.expect</code>) are accepted but treated as no-ops - Fathom is a load tool, not
+        a correctness/assertion tool.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What's the difference between the business view and technical details?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>Every result opens on a plain green/amber/red verdict with a one-sentence reason -
+        meant to be read in two seconds. "Show technical details" (Pro) expands into latency
+        percentiles, throughput/latency-over-time charts, and a per-endpoint breakdown of
+        which request is the weakest link.</p>
+      </div>
+    </details>
+
+    <div class="faq-group-title">Free vs Pro</div>
+
+    <details class="faq-item">
+      <summary>What do I actually get for free?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>Unlimited imports, Light and Medium load presets, the business-friendly verdict,
+        the last 3 runs kept per collection, and 1 pinned dashboard flow - genuinely usable on
+        its own for a quick pulse-check.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>What does Pro unlock?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>The Heavy preset and Advanced mode (your own concurrency/duration/ramp-up),
+        technical details and charts, pre-request/test script execution, up to 10 pinned
+        dashboard flows and 10 kept runs per collection, periodic auto-check with failure
+        notifications and the home-screen widget, and <code>.zip</code> bundle import. See the
+        <a href="index.html#pricing">full comparison</a>.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>How do I manage or cancel my Pro subscription?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>Pro is billed and managed entirely through Google Play, like any other Play
+        subscription - open the Play Store app, go to <strong>Payments &amp; subscriptions →
+        Subscriptions</strong>, and find Fathom Pulse there to change or cancel it. Fathom
+        itself never sees or stores your payment details.</p>
+      </div>
+    </details>
+
+    <div class="faq-group-title">Privacy &amp; data</div>
+
+    <details class="faq-item">
+      <summary>Where does my collection/environment data live?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>On your device, in local storage - Fathom has no backend of its own and no account
+        system. The only network traffic it ever makes on your behalf is the actual HTTP
+        requests your collection defines, sent straight to whatever URL you configured, plus
+        Google Play Billing and AdMob's own traffic. See the
+        <a href="privacy.html">Privacy Policy</a> for the full detail.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Am I allowed to load-test any API I want?<span class="plus">+</span></summary>
+      <div class="faq-body">
+        <p>Only ones you own or are otherwise authorized to test - see the
+        <a href="terms.html">Terms of Service</a>. Fathom is a legitimate testing tool, not a
+        way to attack a service you don't have permission to load.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="copyright">© 2026 Fathom Pulse. All rights reserved.</div>
+    <div class="links">
+      <a href="how-to.html">How it works</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
