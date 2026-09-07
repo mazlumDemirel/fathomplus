@@ -120,7 +120,10 @@
       (throughput, latency, error rate) and the weakest endpoint's name - never the actual
       request URLs, headers, bodies, or scripts in your collection. This is entirely opt-in:
       nothing is sent to Slack unless you add a webhook URL yourself, and Slack's own privacy
-      policy governs the data once it reaches your workspace.
+      policy governs the data once it reaches your workspace. Because the same webhook URL can
+      be shared across several people's devices, each message also carries a sender label - your
+      device's model name by default, or a custom name you choose to set instead - so your team
+      can tell which device a message came from.
     </p>
 
     <h2>8. What we don't do</h2>
