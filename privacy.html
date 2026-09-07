@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Privacy Policy - Fathom Pulse</title>
-<meta name="description" content="What Fathom Pulse does and does not collect: local-only storage, AdMob, Play Billing, and Firebase Remote Config's own data practices, and permissions." />
+<meta name="description" content="What Fathom Pulse does and does not collect: local-only storage, AdMob, Play Billing, Firebase Remote Config, and the optional Slack integration's own data practices, and permissions." />
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 108 108%22><rect width=%22108%22 height=%22108%22 rx=%2222%22 fill=%22%231b4965%22/><path d=%22M20 54 L38 54 L46 30 L58 78 L66 54 L88 54%22 fill=%22none%22 stroke=%22%23cae9ff%22 stroke-width=%226%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/></svg>" />
 <link rel="stylesheet" href="styles.css" />
 </head>
@@ -112,20 +112,31 @@
       transmits, any of your collections, environments, or test results.
     </p>
 
-    <h2>7. What we don't do</h2>
+    <h2>7. Slack integration (Pro, optional)</h2>
+    <p>
+      If you're on Pro and choose to configure a Slack Incoming Webhook, Fathom sends test
+      summaries there - directly from your device to the webhook URL you entered, never through
+      a server of ours. Each message includes only the run's label, verdict, and metrics
+      (throughput, latency, error rate) and the weakest endpoint's name - never the actual
+      request URLs, headers, bodies, or scripts in your collection. This is entirely opt-in:
+      nothing is sent to Slack unless you add a webhook URL yourself, and Slack's own privacy
+      policy governs the data once it reaches your workspace.
+    </p>
+
+    <h2>8. What we don't do</h2>
     <ul>
       <li>We don't require an account, login, or any personal identifier to use the app.</li>
       <li>We don't run our own analytics or crash-reporting SDK that profiles you.</li>
       <li>We don't sell or share your collection/environment/result data - we never have it to begin with.</li>
     </ul>
 
-    <h2>8. Children's privacy</h2>
+    <h2>9. Children's privacy</h2>
     <p>Fathom Pulse is a developer/IT tool not directed at children, and we do not knowingly collect data from children under 13 (or the relevant age in your region).</p>
 
-    <h2>9. Changes to this policy</h2>
+    <h2>10. Changes to this policy</h2>
     <p>If this policy changes, we'll update the date at the top of this page. Continued use of the app after a change means you accept the updated policy.</p>
 
-    <h2>10. Contact</h2>
+    <h2>11. Contact</h2>
     <p>Questions about this policy: [YOUR CONTACT EMAIL]</p>
   </div>
 </section>
