@@ -130,15 +130,18 @@
     <p>
       Two separate mechanisms, both keep data within your own Google account, never a server of
       ours. First, Android's own Auto Backup: if it's turned on for your device (Settings >
-      System > Backup), your collections, environments, templates, dashboard pins, and app
-      settings are periodically copied to a private, hidden area of your Google account and
-      restored automatically on reinstall or a new device signed into the same account - entirely
-      Android's own mechanism, no Google sign-in inside this app, and it's invisible in your
-      normal Drive file list. Second, "Export data"/"Import data" in Settings: a plain file you
-      choose where to save (or open from) yourself, using Android's own file picker - nothing is
-      uploaded anywhere unless you choose to save it somewhere that does. Neither includes past
-      run results or your subscription status (Google Play restores your subscription on its
-      own).
+      System > Backup), your collections, environments, templates, dashboard pins, past run
+      results, and app settings are periodically copied to a private, hidden area of your Google
+      account and restored automatically on reinstall or a new device signed into the same
+      account - entirely Android's own mechanism, no Google sign-in inside this app, and it's
+      invisible in your normal Drive file list. Second, "Export data"/"Import data" in Settings: a
+      plain file you choose where to save (or open from) yourself, using Android's own file picker
+      - nothing is uploaded anywhere unless you choose to save it somewhere that does, and this
+      file doesn't include past run results, only your collections, environments, templates,
+      dashboard pins, and settings. Neither mechanism includes your subscription status (Google
+      Play restores your subscription on its own). If you've configured a Slack webhook (section
+      7), that URL is included in Auto Backup's "app settings" like any other setting - restored
+      the same way, within your own Google account, never a server of ours.
     </p>
 
     <h2>9. PDF reports</h2>
