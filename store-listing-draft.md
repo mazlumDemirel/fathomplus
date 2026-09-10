@@ -21,6 +21,7 @@ Import a collection (paste it, pick a file, or share it straight from Drive/Slac
 WHAT YOU GET
 • Real load, not a spec: an embedded JavaScript engine runs your collection's actual pre-request/test scripts - HMAC signing, chaining a login token into the next request - exactly like Postman does.
 • A verdict you can act on: a plain-language pass/fail summary first, full technical detail (latency percentiles, throughput charts, weakest endpoint) one tap away.
+• Send a real report, not a screenshot: share a polished PDF - charts, device specs, the works - to whichever app you want, straight from the result.
 • Pin what you care about: keep the flows that matter on your Dashboard and home-screen widget, green or red at a glance.
 • Auto-check on a schedule: Fathom quietly re-runs a pinned flow and taps you on the shoulder the moment it starts failing.
 • Slack alerts for your team: post failure alerts and run summaries straight to a channel.
@@ -30,7 +31,7 @@ No account. No backend of ours. No analytics on what you test. Your collections,
 
 FREE, PLUS, PRO
 Free: unlimited imports, Light & Medium presets, the business-friendly verdict.
-Plus: Heavy preset, Advanced mode, full technical details & charts.
+Plus: Heavy preset, Advanced mode, full technical details & charts, PDF report export.
 Pro: pre-request/test scripts, periodic auto-check with failure alerts and the widget, Slack alerts, .zip bundle import.
 
 Built for developers, QA, and IT folks who need to know an API is holding up - without opening a laptop.
